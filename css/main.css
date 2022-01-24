@@ -42,7 +42,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 2px solid black;
     margin: 1em 0;
     padding: 0;
 }
@@ -95,47 +95,72 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
 html {
   background-color: #fff;
   height: 100%;
+  width: 100%;
+  background: url('../img/background.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 body {
+  color: black;
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  padding: 0em 2em;
   font-size: 1.25em;
-  height: 100%;
-  background-color: #5278a3;
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper {
+.flex-container {
   /*add display:flex and set justify-content to space-between*/
   font-weight: 700;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
-}
-
-.div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
-  line-height: 1.5em;
-  font-size: 1.6em;
-  background-color: #f16059;
-  height: 300px;
-  justify-content: center;
-  display: flex;
-  width: 30%;
   align-items: center;
-  text-align: center;
-  background-color: #5278a3;
+  max-width: 1200px;
+}
+
+header,footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+main p {
+    font-size: 1.35em;
+}
+
+header h1 {
+    font-family: 'Lora', sans-serif;
+    font-size: 3em;
 
 }
 
-.div-1, .div-2 {
+.flex-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+    font-size: 1em;
+    border-bottom: 2px solid black;
+}
 
-    border-right: 2px solid black;
-    padding-right: 15px; 
+footer {
+    border-top: 2px solid black;
+}
+  
+footer i {
+    padding: 30px 20px 0 0;
 }
 
 
@@ -220,6 +245,23 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      padding: 0 40px;
+    }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
@@ -270,7 +312,7 @@ body {
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: 2px solid black;
         page-break-inside: avoid;
     }
 
